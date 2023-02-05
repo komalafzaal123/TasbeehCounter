@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 String kalma = kalmaInput.getText().toString();
                 String darood = daroodInput.getText().toString();
                 String astagfar = astagfarInput.getText().toString();
-                String date = String.valueOf(new Date());
+                Date date1 = new Date();
+                SimpleDateFormat DateFor = new SimpleDateFormat("dd MMMM yyyy");
+                String date = DateFor.format(date1);
                 if (kalma.isEmpty() || darood.isEmpty() || astagfar.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter 0 for null", Toast.LENGTH_SHORT).show();
                     return;
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btnCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToUrl("https://github.com/komalafzaal123/QuizApp/commits/main");
+                goToUrl("https://github.com/komalafzaal123/TasbeehCounter/commits/main");
             }
 
             private void goToUrl(String url) {
@@ -68,12 +71,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(launchBrowser);
             }
         });
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnShow = findViewById(R.id.btn_show);
+        btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, show.class);
-                startActivity(intent);
+                Intent intent = new Intent(v.getContext(), show.class);
+                v.getContext().startActivity(intent);
             }
         });
     }
