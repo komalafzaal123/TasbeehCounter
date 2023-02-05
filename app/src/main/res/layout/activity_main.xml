@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_200"
+    android:background="@color/teal_700"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
@@ -15,6 +15,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="188dp"
         android:hint="Kalma"
+        android:textColor="@color/black"
+        android:shadowColor="@color/black"
+        android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +28,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="40dp"
         android:hint="Darood E Pak"
+        android:textColor="@color/black"
+        android:shadowColor="@color/black"
+        android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Kalma" />
@@ -35,6 +41,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="40dp"
         android:hint="Astgafar"
+        android:textColor="@color/black"
+        android:shadowColor="@color/black"
+        android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Darood" />

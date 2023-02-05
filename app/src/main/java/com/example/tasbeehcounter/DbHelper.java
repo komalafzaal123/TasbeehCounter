@@ -15,8 +15,6 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final Boolean IS_RECITED = Boolean.valueOf("isrecited");
     private static final String DATE = "date";
 
-
-
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
