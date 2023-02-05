@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 Counter c;
-                if (kalma == "0" && astagfar == "0" && darood == "0") {
-                    c = new Counter(kalma, darood, astagfar, false, date);
-                } else {
-                    c = new Counter(kalma, darood, astagfar, true, date);
+                Boolean recited;
+                if (kalma.equals("0") && astagfar.equals("0") && darood.equals("0")) {
+                    recited=false;
                 }
+                else {
+                    recited=true;
+                }
+                c = new Counter(kalma, darood, astagfar, recited, date);
                 db.saveData(c);
                 Toast.makeText(MainActivity.this, "Save Successfully!", Toast.LENGTH_SHORT).show();
             }

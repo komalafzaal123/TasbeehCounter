@@ -33,6 +33,7 @@ public class show extends AppCompatActivity {
             myStringList.add("Darood e Pak: "+list.get(count).getDaroodCount());
             myStringList.add("Astgafar: "+list.get(count).getAstagfarCount());
             count++;
+
         }
         ArrayAdapter arrayAdapter = new ArrayAdapter<String>(show.this, android.R.layout.simple_list_item_1, myStringList);
         listViewTasbeeh.setAdapter(arrayAdapter);
