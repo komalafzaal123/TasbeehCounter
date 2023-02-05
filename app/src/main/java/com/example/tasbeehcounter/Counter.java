@@ -10,7 +10,12 @@ public class Counter {
     private Boolean IsRecited;
     private String Date;
 
-    public Counter(String kalma, String darood, String astagfar, Boolean recited, java.util.Date date) {
+    public Counter(String kalma, String darood, String astagfar, Boolean recited, String date) {
+        KalmaCount = kalma;
+        DaroodCount = darood;
+        AstagfarCount = astagfar;
+        IsRecited = recited;
+        Date = date;
     }
 
     public int getId() {
@@ -69,4 +74,6 @@ public class Counter {
         IsRecited = isRecited;
         Date = date;
     }
+
+
 }
