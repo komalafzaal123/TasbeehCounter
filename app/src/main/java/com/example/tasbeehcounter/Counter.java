@@ -1,5 +1,7 @@
 package com.example.tasbeehcounter;
 
+import java.util.Date;
+
 public class Counter {
     private int id;
     private String KalmaCount;
@@ -7,6 +9,9 @@ public class Counter {
     private String AstagfarCount;
     private Boolean IsRecited;
     private String Date;
+
+    public Counter(String kalma, String darood, String astagfar, Boolean recited, java.util.Date date) {
+    }
 
     public int getId() {
         return id;

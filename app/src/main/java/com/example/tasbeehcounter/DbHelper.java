@@ -1,5 +1,6 @@
 package com.example.tasbeehcounter;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -37,5 +38,23 @@ public class DbHelper extends SQLiteOpenHelper {
         // this method is called to check if the table exists already.
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public void saveData(Counter tasbeehCount) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(KALMA_COUNT, tasbeehCount.getKalmaCount());
+        values.put(DAROODEPAK_COUNT, tasbeehCount.getDaroodCount());
+        values.put(ASTAGFAR_COUNT, tasbeehCount.getAstagfarCount());
+        values.put(String.valueOf(IS_RECITED), tasbeehCount.getRecited());
+        values.put(DATE, tasbeehCount.getDate());
+
+
+        db.insert(TABLE_NAME, null, values);
+
+//        db.close();
     }
 }
