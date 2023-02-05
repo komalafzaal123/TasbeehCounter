@@ -46,15 +46,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please enter 0 for null", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                boolean recited;
+                Counter c;
                 if (kalma == "0" && astagfar == "0" && darood == "0") {
-                    recited = false;
-
+                    c = new Counter(kalma, darood, astagfar, false, date);
                 } else {
-                    recited = true;
+                    c = new Counter(kalma, darood, astagfar, true, date);
                 }
-                Counter c = new Counter(kalma, darood, astagfar, recited, date);
                 db.saveData(c);
                 Toast.makeText(MainActivity.this, "Save Successfully!", Toast.LENGTH_SHORT).show();
             }
