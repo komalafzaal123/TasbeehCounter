@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Counter c = new Counter(kalma, darood, astagfar, recited, date);
                 db.saveData(c);
+                Toast.makeText(MainActivity.this, "Save Successfully!", Toast.LENGTH_SHORT).show();
             }
         });
         btnCommit = findViewById(R.id.btn_commit);
